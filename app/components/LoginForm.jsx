@@ -9,8 +9,7 @@ const LoginForm = () => {
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     const dispatch = useAppDispatch()
-    const auth=useAppSelector((state)=>state.auth.authState)    
-    console.log(auth) 
+    
     const router = useRouter()
     const loginOrganisation = async () =>{
         const formdata= {
@@ -73,7 +72,7 @@ const LoginForm = () => {
                   <button onClick={loginOrganisation} type="submit" class="w-full text-white bg-primary-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Login</button>
                   
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Dont have an account? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Create here</a>
+                      Dont have an account? <a href="/signUp" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Create here</a>
                   </p>
               </div>
           </div>

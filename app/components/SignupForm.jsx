@@ -36,10 +36,11 @@ const signupForm = () => {
               
             )
             const result=await res.json()
-            if(result)
+            console.log(result)
+            if(result.token)
             {
               dispatch(setSignUp({token:result.token}))
-              router.push('/')
+              router.push('/login')
             }
         } catch (error) {
             console.log(error)

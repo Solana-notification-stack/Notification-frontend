@@ -23,7 +23,7 @@ export default function RootLayout({
         </Suspense>
         {children}
      </ReduxProvider>
-    
+  
        
       </body>
      

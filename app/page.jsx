@@ -1,33 +1,32 @@
-"use client"
-import { Card, Title, Text } from '@tremor/react';
-import Search from './search';
-import { useSelector } from 'react-redux';
-import SignupPage from './SignUp/page';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import OrgDetail from './components/OrgDetail'
-import { useAppSelector } from '../store/configureStore';
-export default async function IndexPage() {
-  const token=useAppSelector(state=>state.auth.token)
-  const router=useRouter()
-  useEffect(
-    
-    ()=>{
-       
-       if(!token){
-         router.push('/login')
-       }
-    },[]
-  )
+
+import React from 'react'
+import Features from './components/Features'
+import Pricing from './components/Pricing'
+const page = () => {
   return (
-    <>
-    {
-     <main className="p-4 md:p-10 mx-auto max-w-7xl">
-      <Title>Your App Details</Title>
-      <Search />
-      <OrgDetail/>
-    </main>
-    }
-    </>
-  );
+<>
+<div className="flex flex-col items-center justify-center pt-10 mx-auto md:w-3/5">
+          <h1 className="text-6xl font-extrabold text-center">
+            <span className="block">Notify The Web</span>
+            <span className="block text-blue-600">like never before</span>
+          </h1>
+          <p className="mt-5 text-center text-gray-600">
+            Quickly send notifications all over the world
+          </p>
+        </div>
+        <div className="flex mt-3 items-center justify-center space-x-5">
+          <a href='/login' className="px-10 py-3 text-center text-white bg-blue-600 rounded shadow hover:bg-blue-500">
+            Get Started
+          </a>
+          <a className="px-10 py-3 text-center text-blue-600 rounded shadow hover:bg-blue-50">
+            Docs
+          </a>
+        </div>
+     <Features/> 
+     <Pricing/>
+    
+</>
+  )
 }
+
+export default page
