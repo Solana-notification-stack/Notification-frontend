@@ -4,23 +4,24 @@ import { Fragment } from 'react';
 import { usePathname } from 'next/navigation';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { signIn, signOut } from 'next-auth/react';
-import Image from 'next/image';
-import { UseSelector, useSelector } from 'react-redux';
+
+import { selectToken } from '../store';
+import { useSelector } from 'react-redux';
 
 
 
-function classNames(...classes) {
+function classNames(...classes) { 
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Navbar({ user }) {
   const pathname = usePathname();
-  const token = useSelector((state)=>state.token)
-  console.log(token,"token")
+  const token = useSelector((state)=>state.auth.token) 
+ 
   const navigation = [
-    { name: 'Dashboard', href: `${token?'/':'signUp'}` },
-    { name: 'Playground',href: `${token?'playground':'signUp'}` }
+    { name: 'Dashboard', href: '/' },
+    {name:'Register App',href:'/registerApp'},
+    { name: 'Analytics',href: '/playground' }
   ];
   return (
     <Disclosure as="nav" className="bg-white shadow-sm">

@@ -3,16 +3,30 @@ import { Card, Title, Text } from '@tremor/react';
 import Search from './search';
 import { useSelector } from 'react-redux';
 import SignupPage from './SignUp/page';
-
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import OrgDetail from './components/OrgDetail'
+import { useAppSelector } from '../store/configureStore';
 export default async function IndexPage() {
-  const token=useSelector((state)=>state.token)
+  const token=useAppSelector(state=>state.auth.token)
+  const router=useRouter()
+  useEffect(
+    
+    ()=>{
+       
+       if(!token){
+         router.push('/login')
+       }
+    },[]
+  )
   return (
     <>
     {
-      token?<main className="p-4 md:p-10 mx-auto max-w-7xl">
-      <Title>Register Your App</Title>
+     <main className="p-4 md:p-10 mx-auto max-w-7xl">
+      <Title>Your App Details</Title>
       <Search />
-    </main>:<SignupPage/>
+      <OrgDetail/>
+    </main>
     }
     </>
   );

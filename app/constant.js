@@ -1,0 +1,1 @@
+export const url='https://api-7szm3raj4q-uc.a.run.app'
