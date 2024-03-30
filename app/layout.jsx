@@ -2,6 +2,7 @@
 import './globals.css';
 import Nav from './nav';
 import { Suspense } from 'react';
+import Footer from './components/Footer'
 import dynamic from "next/dynamic";
 export const metadata = {
   title: 'Next.js App Router + NextAuth + Tailwind CSS',
@@ -17,11 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-gray-50">
       <body className="h-full">
-     <ReduxProvider>
+     <ReduxProvider> 
      <Suspense>
           <Nav />
         </Suspense>
         {children}
+        <Footer/>
      </ReduxProvider>
   
        

@@ -32,7 +32,7 @@ const LoginForm = () => {
             if(result)
             {
               dispatch(setLogin({token:result.token}))
-              router.push('/')
+              router.push('/home')
             }
         } catch (error) {
             console.log("error",error)

@@ -21,7 +21,9 @@ export default function Navbar({ user }) {
   const navigation = [
     { name: 'Dashboard', href: '/' },
     {name:'Register App',href:'/registerApp'},
-    { name: 'Analytics',href: '/playground' }
+    {name:'Docs',href:'/docs'}
+
+   
   ];
   return (
     <Disclosure as="nav" className="bg-white shadow-sm">

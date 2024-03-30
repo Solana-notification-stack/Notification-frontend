@@ -4,7 +4,7 @@ import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import Chart from './chart';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../store/configureStore';
-import { useRouter } from 'next/navigation';
+import { useRouter,useSearchParams } from 'next/navigation';
 
 
 const shop = [
@@ -26,24 +26,31 @@ const shop = [
 
 export default function PlaygroundPage(props) {
   const token=useAppSelector(state=>state.auth.token)
+  const router=useRouter()
+  const search =useSearchParams()
+  const appId=search.get('appId')
+
   const website = [
-    { name: 'App ID', value: 1230 },
-    { name: 'Created At', value: 751 },
-    { name: 'Organisation ID', value: 471 },
+    { name: 'App ID', value: appId },
+    { name: 'Created At', value: "29/03/2024"||props.created },
+    { name: 'Organisation ID', value: "ORG-1265"||props.orgId },
    
   ];
   const data = [
     {
       category: props.appName||"My APP",
-      stat: '10,234',
+      stat: '10',
       data: website
     }
   ];
-  const router=useRouter()
+ 
   useEffect(
     ()=>{
        if(!token){
          router.push('/login')
+
+       }else{
+        
        }
     },[])
   return (
@@ -82,7 +89,7 @@ export default function PlaygroundPage(props) {
         ))}
       </Grid>
       <div>
-        
+
       </div>
     </main>
   );
