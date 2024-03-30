@@ -2,14 +2,26 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { useAppSelector } from '../../store/configureStore'
+import { useRouter } from 'next/navigation'
 import { Button, Checkbox, Label, TextInput,FileInput } from "flowbite-react";
 import Link from "next/link";
 import{ url} from '../constant'
 const Page = () => {
     const token=useAppSelector((state)=>state.auth.token)
     const [orgDetails,setOrgDetails]=useState({})
+   
+    const router=useRouter()
+  useEffect(
+    
+    ()=>{
+       
+       if(!token){
+         router.push('/login')
+       }
+    },[]
+  )
     useEffect(()=>{
-        console.log("booted")
+        
      const getOrgData= async ()=>{
         try {
             const res= await fetch(

@@ -7,9 +7,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import { selectToken } from '../store';
 import { useSelector } from 'react-redux';
-
-
-
+import { useAppDispatch } from '../store/configureStore';
+import { setLogout } from '../store';
+import { useRouter } from 'next/navigation';
 function classNames(...classes) { 
   return classes.filter(Boolean).join(' ');
 }
@@ -17,9 +17,11 @@ function classNames(...classes) {
 export default function Navbar({ user }) {
   const pathname = usePathname();
   const token = useSelector((state)=>state.auth.token) 
- 
+  const dispatch = useAppDispatch()
+
+   const router = useRouter()
   const navigation = [
-    { name: 'Dashboard', href: '/' },
+    { name: 'Dashboard', href: '/home' },
     {name:'Register App',href:'/registerApp'},
     {name:'Docs',href:'/docs'}
 
@@ -71,6 +73,28 @@ export default function Navbar({ user }) {
                       {item.name}
                     </a>
                   ))}
+                   { <a
+                      onClick={()=>{
+                          if(token)
+                          {
+                            dispatch(setLogout())
+                          router.push('/')
+                          }else
+                          {
+                            router.push('/login')
+                          }
+                      }}
+                     
+                      className={classNames(
+                        pathname === '/login'
+                          ? 'border-slate-500 text-gray-900'
+                          : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
+                        'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium  '
+                      )}
+                     
+                    >
+                      {token?"Logout":"Login"}
+                    </a>}
                 </div>
               </div>
              

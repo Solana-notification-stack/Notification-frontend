@@ -22,6 +22,7 @@ export const authSlice = createSlice({
         console.log(state.token,"redux")
     },
     setLogout:(state)=>{
+       state.token=null
       state.authState=false
 
         }
