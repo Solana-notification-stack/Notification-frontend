@@ -66,9 +66,9 @@ const OrgDetail = () => {
       <hr className='mt-1  '></hr>
       <div className='mt-3  w-full'>
         {
-          registeredAppData.map((detail)=>{
+          registeredAppData?.map((detail)=>{
            return(
-            <AppListWidget  {...detail} />
+            <AppListWidget key={detail.appId}  {...detail} />
            )
           })
         }
