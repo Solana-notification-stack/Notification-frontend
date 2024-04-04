@@ -37,26 +37,28 @@ export default function PlaygroundPage(props) {
  
   useEffect(
     ()=>{
+      const getAppDetails = async ()=>{
+        const res= await fetch(
+          `${url}/getAppData/${appId}`,{
+            method:'GET',
+            headers: {
+               
+                "Authorization": `Bearer ${token}`
+              },
+            
+          }
+        )
+        const result= await res.json()
+        console.log("result----->",result)
+        return result
+       }
        if(!token){
          router.push('/login')
 
-       }else{
-         const getAppDetails = async ()=>{
-          const res= await fetch(
-            `${url}/getAppData/${appId}`,{
-              method:'GET',
-              headers: {
-                 
-                  "Authorization": `Bearer ${token}`
-                },
-              
-            }
-          )
-          const result= await res.json()
-          setAppdata(result)
-          console.log("result----->",result)
-         }
-         getAppDetails()
+       }else {
+         getAppDetails().then(v=>{
+          setAppdata(v)
+         })
        }
     },[])
 

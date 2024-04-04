@@ -5,7 +5,7 @@ import { gradientStyle1,gradientStyle2,featuresStyle } from './constant';
 import LandingNav from './components/LandingNav';
 const page = () => {
   return (
-    <div style={gradientStyle2} >
+    <div className="" style={gradientStyle2} >
       <LandingNav />
       <div className='lg:mx-5  ' style={gradientStyle1}>
         

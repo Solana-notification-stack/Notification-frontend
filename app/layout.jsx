@@ -18,11 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full ">
-      <body className="h-full ">
+      <body className="h-full bg-[#151718] ">
      <ReduxProvider> 
-     <Suspense>
-          {/* <Nav /> */}
-        </Suspense>
+     
         {children}
         <Footer/>
      </ReduxProvider>

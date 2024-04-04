@@ -8,15 +8,13 @@ export const gradientStyle1={
   }
 
 export const gradientStyle2={
-  margin: 0,
-  padding: 0,
+  
   backgroundColor: '#010314',
   backgroundImage: 'linear-gradient(to bottom, rgba(1, 3, 20, 1) 0, var(--bg-body-alt) 40%, rgba(1, 3, 20, 1) 100%), linear-gradient(to top, var(--bg-body-alt) 0, rgba(1, 3, 20, 1) 100%)',
   backgroundPosition: 'top, bottom',
   backgroundSize: '100% 1600px, 100% 800px',
   backgroundRepeat: 'no-repeat',
   color: '#dfe1f4',
-
   MozOsxFontSmoothing: 'grayscale',
   WebkitFontSmoothing: 'antialiased',
   WebkitTextSizeAdjust: '100%',

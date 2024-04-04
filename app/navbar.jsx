@@ -1,11 +1,8 @@
 'use client';
 
-import { Fragment } from 'react';
 import { usePathname } from 'next/navigation';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-
-import { selectToken } from '../store';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../store/configureStore';
 import { setLogout } from '../store';
@@ -15,7 +12,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Navbar({ user }) {
+export default function Navbar() {
   const pathname = usePathname();
   const token = useSelector((state)=>state.auth.token) 
   const dispatch = useAppDispatch()
