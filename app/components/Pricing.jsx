@@ -18,25 +18,25 @@ const Pricing = () => {
             system
           </p>
         </div>
-        <div className="flex flex-col p-10 space-x-0 space-y-5 bg-gray-200 rounded-lg md:space-y-0 md:space-x-5 md:flex-row">
-          <div className="flex flex-col items-start overflow-hidden bg-white border rounded-lg md:w-1/2">
+        <div className="flex flex-col  p-10 space-x-0 space-y-5  rounded-lg md:space-y-0 md:space-x-5 md:flex-row">
+          <div className="  flex flex-col items-start bg-[rgba(255, 255, 255, 0.5)]  overflow-hidden  border rounded-lg md:w-1/2">
             <div className="w-full p-10 space-y-5">
               <span className="px-5 py-1 text-sm text-blue-600 uppercase bg-blue-100 rounded-full">
                 Hobby
               </span>
               <h2 className="space-x-2 text-6xl">
-                <span className="font-extrabold">Free</span>
+                <span className="font-extrabold text-white">Free</span>
                 <small className="text-lg text-gray-400">for life!</small>
               </h2>
             </div>
-            <div className="flex flex-col w-full h-full p-10 space-y-5 bg-gray-100 border-t">
+            <div className="flex flex-col w-full h-full p-10 space-y-5 border-t">
               <a
-                className="px-10 py-3 text-lg text-center text-blue-600 bg-white rounded shadow hover:bg-blue-50"
+                className="px-10 py-3 text-lg text-center text-white  rounded shadow bg-[orange]"
                 href="#!"
               >
                 Get Started with Hobby
               </a>
-              <div className="space-y-5">
+              <div className="space-y-5 text-white">
                 <h6 className="uppercase">What&apos;s Included</h6>
                 <ul className="leading-10 list-none list-inside">
                   <li className="flex items-center space-x-5">
@@ -59,24 +59,24 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-start overflow-hidden bg-white border rounded-lg md:w-1/2">
+          <div className=" h-[60%] flex flex-col items-start overflow-hidden  border rounded-lg md:w-1/2">
             <div className="w-full p-10 space-y-5">
               <span className="px-5 py-1 text-sm text-blue-600 uppercase bg-blue-100 rounded-full">
                 Premium
               </span>
-              <h2 className="space-x-2 text-6xl">
+              <h2 className="space-x-2 text-white text-6xl">
                 <span className="font-extrabold">$9</span>
                 <small className="text-lg text-gray-400">per month</small>
               </h2>
             </div>
-            <div className="flex flex-col w-full h-full p-10 space-y-5 bg-gray-100 border-t">
+            <div className="flex flex-col w-full h-full p-10 space-y-5  border-t">
               <a
-                className="px-10 py-3 text-lg text-center text-blue-600 bg-white rounded shadow hover:bg-blue-50"
+                className="px-10 py-3 text-lg text-center text-white  rounded shadow bg-[orange]"
                 href="#!"
               >
                 Get Started with Premium
               </a>
-              <div className="space-y-5">
+              <div className="space-y-5 text-white">
                 <h6 className="uppercase">What&apos;s Included</h6>
                 <ul className="leading-10 list-disc list-inside">
                   <li className="flex items-center space-x-5">

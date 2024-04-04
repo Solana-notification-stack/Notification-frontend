@@ -6,10 +6,12 @@ import { useRouter } from 'next/navigation'
 import { Button, Checkbox, Label, TextInput,FileInput } from "flowbite-react";
 import Link from "next/link";
 import{ url} from '../constant'
+
 const Page = () => {
     const token=useAppSelector((state)=>state.auth.token)
     const [orgDetails,setOrgDetails]=useState({})
-   
+    const [jsonFile,setJsonFile]=useState(null)
+    const [appName,setAppName]=useState("")
     const router=useRouter()
   useEffect(
     
@@ -46,6 +48,12 @@ const Page = () => {
          getOrgData()
      }
     },[])
+
+    const handleCreateApp = async ()=>{
+      const formData= new FormData()
+      formData.append('appName',appName)
+      formData.append()
+    }
   return (
     
     <>
@@ -55,7 +63,7 @@ const Page = () => {
         <div className="mb-2 text-black ">
           <Label color='black' htmlFor="email2" value="App Name" />
         </div>
-        <TextInput color="grey" id="email" type="email" placeholder="Your App" required  />
+        <TextInput onChange={(e)=>setAppName(e.target.value)} color="grey" id="email" type="email" placeholder="Your App" required  />
       </div>
       <div>
         <div className="mb-2 ">
@@ -66,7 +74,7 @@ const Page = () => {
       <div className="">
         <Label color='black' htmlFor="file-upload" value="Upload File" />
       </div>
-      <FileInput color="grey"  sizing={"lg"} id="file-upload" />    
+      <FileInput onChange={(e)=>setJsonFile(e.target.files[0])} color="grey"  sizing={"lg"} id="file-upload" />    
       <Button type="submit">Create App</Button>
     </div>
     </div>

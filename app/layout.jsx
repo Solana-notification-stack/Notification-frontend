@@ -2,6 +2,7 @@
 import './globals.css';
 import Nav from './nav';
 import { Suspense } from 'react';
+import { styles } from './constant';
 import Footer from './components/Footer'
 import dynamic from "next/dynamic";
 export const metadata = {
@@ -16,11 +17,11 @@ export default function RootLayout({
   children
 }) {
   return (
-    <html lang="en" className="h-full bg-gray-50">
-      <body className="h-full">
+    <html lang="en" className="h-full ">
+      <body className="h-full ">
      <ReduxProvider> 
      <Suspense>
-          <Nav />
+          {/* <Nav /> */}
         </Suspense>
         {children}
         <Footer/>

@@ -2,18 +2,14 @@
 
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import Chart from './chart';
-import { useEffect } from 'react';
+import{ url }from '../constant'
+import { useEffect,useState } from 'react';
 import { useAppSelector } from '../../store/configureStore';
 import { useRouter,useSearchParams } from 'next/navigation';
-
-
-const shop = [
-  { name: '/home', value: 453 },
-  { name: '/imprint', value: 351 },
-  { name: '/shop', value: 271 },
-  { name: '/pricing', value: 191 }
-];
-
+import Nav from '../nav';
+import Image from 'next/image';
+import bellIcon from '../../assets/bellIcon.png'
+import { Button } from 'flowbite-react';
 // const app = [
 //   { name: '/shop', value: 789 },
 //   { name: '/product-features', value: 676 },
@@ -30,19 +26,14 @@ export default function PlaygroundPage(props) {
   const search =useSearchParams()
   const appId=search.get('appId')
 
+   const [appData,setAppdata]=useState([])
   const website = [
     { name: 'App ID', value: appId },
     { name: 'Created At', value: "29/03/2024"||props.created },
-    { name: 'Organisation ID', value: "ORG-1265"||props.orgId },
+    { name: 'Organisation ID', value: appData.orgId  },
    
   ];
-  const data = [
-    {
-      category: props.appName||"My APP",
-      stat: '10',
-      data: website
-    }
-  ];
+  
  
   useEffect(
     ()=>{
@@ -50,25 +41,57 @@ export default function PlaygroundPage(props) {
          router.push('/login')
 
        }else{
-        
+         const getAppDetails = async ()=>{
+          const res= await fetch(
+            `${url}/getAppData/${appId}`,{
+              method:'GET',
+              headers: {
+                 
+                  "Authorization": `Bearer ${token}`
+                },
+              
+            }
+          )
+          const result= await res.json()
+          setAppdata(result)
+          console.log("result----->",result)
+         }
+         getAppDetails()
        }
     },[])
+
+    const data = [
+      {
+        category: props.appName||"My APP",
+        stat: `${appData.userIds?appData?.userIds.length:0}`,
+        data: website
+      }
+    ];
   return (
+    <div div className='bg-[#151718] h-full'>
+    <div className=' w-full'>
+    <Nav/>
+    </div>
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
-      <Grid numItemsSm={2} numItemsLg={3} className="gap-6">
+    
+      <Grid numItemsSm={2} numItemsLg={3} className="
+       
+      gap-6">
         {data.map((item) => (
-          <Card key={item.category}>
-            <Title>{item.category}</Title>
+          <Card key={item.category}
+            className="text-white bg-[#1a1d1e]"
+          >
+            <Title className="text-white" >{item.category}</Title>
             <Flex
               justifyContent="start"
               alignItems="baseline"
-              className="space-x-2"
+              className="space-x-2 text-white"
             >
-              <Metric>{item.stat}</Metric>
-              <Text>Total Users</Text>
+              <Metric className="text-gray-500">{item.stat}</Metric>
+              <Text className="text-gray-500">Total Users</Text>
             </Flex>
             <Flex className="mt-6">
-              <Text>Details</Text>
+              <Text className="text-white" >Details</Text>
             
             </Flex>
            <div className='mt-3'>
@@ -76,7 +99,7 @@ export default function PlaygroundPage(props) {
               item.data.map((data)=>{
                  return(
                   <>
-                  <div className='flex text-gray-600  justify-between'>
+                  <div key={data.name} className='flex text-white  justify-between'>
                     <p>{data.name}</p>
                     <p>{data.value}</p>
                   </div>
@@ -87,10 +110,26 @@ export default function PlaygroundPage(props) {
            </div>
           </Card>
         ))}
+         {data.map((item) => (
+          <Card key={item.category}
+            className="text-white  bg-[#1a1d1e]"
+          >
+            <Title className="text-white text-center" >Send Notification</Title>
+            <Image alt='bellIcon' className='rounded-full mx-auto mt-5' height={120} src={bellIcon}/>
+            <Flex className="mt-6">
+            <Button className='bg-white mx-auto text-black'>Send</Button>
+            </Flex>
+           <div className='mt-3'>
+            
+           </div>
+          </Card>
+        ))}
       </Grid>
+      
       <div>
 
       </div>
     </main>
+    </div>
   );
 }

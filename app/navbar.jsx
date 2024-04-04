@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../store/configureStore';
 import { setLogout } from '../store';
 import { useRouter } from 'next/navigation';
+import { Button } from 'flowbite-react';
 function classNames(...classes) { 
   return classes.filter(Boolean).join(' ');
 }
@@ -28,7 +29,16 @@ export default function Navbar({ user }) {
    
   ];
   return (
-    <Disclosure as="nav" className="bg-white shadow-sm">
+    <Disclosure as="nav"
+    style={ {
+      borderBottom: '0.1px solid grey', // Adjust the border style as needed
+      borderImageSource: 'linear-gradient(218.01deg, #B07D0F -28.91%, rgba(217, 173, 75, 0.09) 50%)',
+      borderImageSlice: '1', // Adjust the border slice as needed
+      borderImageRepeat: 'stretch', // Adjust the border repeat as needed
+      borderImageWidth: '1', // Adjust the border width as needed
+      position:"sticky"
+    }}
+    className="shadow-sm">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -64,8 +74,8 @@ export default function Navbar({ user }) {
                       href={item.href}
                       className={classNames(
                         pathname === item.href
-                          ? 'border-slate-500 text-gray-900'
-                          : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
+                          ? 'border-slate-500 text-white'
+                          : 'border-transparent text-white  ',
                         'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'
                       )}
                       aria-current={pathname === item.href ? 'page' : undefined}
@@ -73,7 +83,8 @@ export default function Navbar({ user }) {
                       {item.name}
                     </a>
                   ))}
-                   { <a
+                   { <Button 
+                      size="sm"
                       onClick={()=>{
                           if(token)
                           {
@@ -87,14 +98,14 @@ export default function Navbar({ user }) {
                      
                       className={classNames(
                         pathname === '/login'
-                          ? 'border-slate-500 text-gray-900'
-                          : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
-                        'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium  '
+                          ? 'border-slate-500 text-white'
+                          : 'border-transparent text-white ',
+                        ' h-[40%] self-center bg-white text-black'
                       )}
                      
                     >
                       {token?"Logout":"Login"}
-                    </a>}
+                    </Button>}
                 </div>
               </div>
              

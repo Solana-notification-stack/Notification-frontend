@@ -5,13 +5,15 @@ import { Button, Card } from "flowbite-react";
 import AppListWidget from '../components/AppListWidget'
 import { Title } from '@tremor/react'
 const OrgDetail = () => {
+
+    const [registeredAppData,setRegisteredAppData]=useState([])
     const token = useSelector(state=>state.auth.token)
     const appDetails= [
       {orgId:'9A764-A1',appName:"App1",appId:"20001A1",appSecret:"sceret",userIds:[]}
     ]
     const [orgDetails,setOrgDetails]=useState({})
     useEffect(()=>{
-        console.log("booted")
+    
      const getOrgData= async ()=>{
         try {
             const res= await fetch(
@@ -26,7 +28,8 @@ const OrgDetail = () => {
               )
               const result= await res.json()
               setOrgDetails(result)
-              console.log(result,"details")  
+              setRegisteredAppData(result.registeredAppsData)
+              // console.log(result.registeredAppsData,"details")  
         } catch (error) {
              console.log(error)
         }
@@ -38,7 +41,7 @@ const OrgDetail = () => {
     },[])
   return (
     <>
-    <Card  className="max-w-sm  mt-5">
+    <Card style={{backgroundColor:"#1a1d1e"}}   className="max-w-sm  mt-5">
       <h5 className="text-2xl capitalize font-bold tracking-tight text-black dark:text-white">
         {orgDetails?.credentials?.orgName}
       </h5>
@@ -54,23 +57,23 @@ const OrgDetail = () => {
       
 
     </Card>
-    <div>
-        <div className='flex gap-4 w-full'>
-      <h1 className='mt-5 mb-1 font-bold text-2xl'> Registered Apps</h1>
+    <Card style={{backgroundColor:"#1a1d1e"}} className='mt-10 min-h-[30vh] lg:w-[70%] '>
+        <div className='flex gap-4  w-full'>
+      <h1 className=' text-white mb-1 font-bold text-2xl'> Registered Apps</h1>
        
         </div>
 
-      <hr className='mt-1 lg:w-[70%] '></hr>
-      <div className='mt-3 lg:w-[70%] w-full'>
+      <hr className='mt-1  '></hr>
+      <div className='mt-3  w-full'>
         {
-          appDetails.map((detail)=>{
+          registeredAppData.map((detail)=>{
            return(
             <AppListWidget  {...detail} />
            )
           })
         }
       </div>
-    </div>
+    </Card>
     </>
   )
 }
