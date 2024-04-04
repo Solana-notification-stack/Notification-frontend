@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from '../components/LoginForm'
-const page = () => {
+const Page = () => {
   return (
     <>
     <LoginForm/>
@@ -8,4 +8,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

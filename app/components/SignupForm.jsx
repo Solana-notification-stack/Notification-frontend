@@ -5,7 +5,7 @@ import LoginForm from './LoginForm'
 import { useAppDispatch } from '../../store/configureStore';
 import { useRouter } from 'next/navigation';
 import { setSignUp } from '../../store';
-const signupForm = () => {
+const SignupForm = () => {
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     const [confirmPassword,setConfirmPassword]=useState('')
@@ -92,4 +92,4 @@ const signupForm = () => {
   )
 }
 
-export default signupForm
+export default SignupForm
