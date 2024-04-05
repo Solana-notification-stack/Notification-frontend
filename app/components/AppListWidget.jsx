@@ -10,13 +10,12 @@ const AppListWidget = ({appName,appId,appSecret,userIds,orgId}) => {
     }
   return (
     <>
-    <div className='flex w-full mt-1 justify-between'>
+    <div className='flex w-full mt-2 justify-between items-center'>
     <p className=' text-gray-500 font-bold' >{appName||"My APP"}</p>
     <p className=' text-gray-500'>{appId}</p>
 
     <button
-     
-    class="bg-white hover:bg-gray-300 text-black btn-sm font-bold py-2 px-4 rounded">
+    class="bg-white hover:bg-gray-300 text-black btn-sm font-bold  px-4 py-[2px] rounded">
      <Link href={{pathname:'/playground',query:{appId:appId}}}>Details</Link>
     
 </button>

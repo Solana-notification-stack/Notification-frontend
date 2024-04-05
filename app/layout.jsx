@@ -4,7 +4,9 @@ import Nav from './nav';
 import { Suspense } from 'react';
 import { styles } from './constant';
 import Footer from './components/Footer'
+import 'react-toastify/dist/ReactToastify.css';
 import dynamic from "next/dynamic";
+import { ToastContainer } from 'react-toastify';
 export const metadata = {
   title: 'Next.js App Router + NextAuth + Tailwind CSS',
   description:
@@ -20,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className="h-full ">
       <body className="h-full bg-[#151718] ">
      <ReduxProvider> 
-     
+        <ToastContainer position='top-right'/>
         {children}
         <Footer/>
      </ReduxProvider>

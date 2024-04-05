@@ -9,7 +9,7 @@ const page = () => {
       <LandingNav />
       <div className='lg:mx-5  ' style={gradientStyle1}>
         
-        <div className="flex flex-col items-center w-full justify-center pt-10 h-[80vh]   ">
+        <div className="flex flex-col items-center w-full justify-center md:pt-10 h-[80vh]   ">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-center lg:mt-[3rem]">
             <span className="block text-[orange]">Notify The Web</span>
             <span className="block text-white m-5 md:mt-9">like never before</span>

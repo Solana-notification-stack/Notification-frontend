@@ -68,7 +68,10 @@ const OrgDetail = () => {
         {
           registeredAppData?.map((detail)=>{
            return(
-            <AppListWidget key={detail.appId}  {...detail} />
+            <>
+            
+          {detail &&  <AppListWidget  key={detail?.appId}  {...detail} />}
+            </>
            )
           })
         }

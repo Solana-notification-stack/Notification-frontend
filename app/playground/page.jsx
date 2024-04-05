@@ -31,6 +31,7 @@ export default function PlaygroundPage(props) {
     { name: 'App ID', value: appId },
     { name: 'Created At', value: "29/03/2024"||props.created },
     { name: 'Organisation ID', value: appData.orgId  },
+    { name: 'App secret', value: appData.appSecret  },
    
   ];
   
