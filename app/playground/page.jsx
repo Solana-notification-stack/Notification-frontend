@@ -3,6 +3,7 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import Chart from './chart';
 import{ url }from '../constant'
+import NotificationModal from '../components/NotificationModal'
 import { useEffect,useState } from 'react';
 import { useAppSelector } from '../../store/configureStore';
 import { useRouter,useSearchParams } from 'next/navigation';
@@ -18,7 +19,18 @@ import { Button } from 'flowbite-react';
 //   { name: '/downloads', value: 191 }
 // ];
 
+const userData=[{
+  userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
 
+},{
+  userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
+
+},
+{
+  userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
+
+},
+]
 
 export default function PlaygroundPage(props) {
   const token=useAppSelector(state=>state.auth.token)
@@ -102,9 +114,9 @@ export default function PlaygroundPage(props) {
               item.data.map((data)=>{
                  return(
                   <>
-                  <div key={data.name} className='flex text-white  justify-between'>
-                    <p>{data.name}</p>
-                    <p>{data.value}</p>
+                  <div key={data.name} className='flex text-white   justify-between'>
+                    <p >{data.name}</p>
+                    <p className='text-gray-400'>{data.value}</p>
                   </div>
                   </>
                  )
@@ -120,7 +132,10 @@ export default function PlaygroundPage(props) {
             <Title className="text-white text-center" >Send Notification</Title>
             <Image alt='bellIcon' className='rounded-full mx-auto mt-5' height={120} src={bellIcon}/>
             <Flex className="mt-6">
-            <Button className='bg-white mx-auto text-black'>Send</Button>
+              <div className='mx-auto'>
+
+            <NotificationModal />
+              </div>
             </Flex>
            <div className='mt-3'>
             
@@ -130,7 +145,30 @@ export default function PlaygroundPage(props) {
       </Grid>
       
       <div>
+      <Card style={{backgroundColor:"#1a1d1e"}} className='mt-10 min-h-[30vh] lg:w-[70%] '>
+        <div className='flex gap-4  w-full'>
+      <h1 className=' text-white mb-1 font-bold text-2xl'> Users</h1>
+       
+        </div>
 
+      <hr className='mt-1  '></hr>
+      <div className='mt-3  w-full'>
+        <div className='flex text-gray-300'>
+           
+        </div>
+        {userData?.map((data,index)=>{
+            return(
+              <>
+              <div className='flex text-xs sm:text-[16px] text-gray-400 justify-between mt-3 px-3'>
+               <p>{index+1}</p>
+               <p>{data.userIdentifier}</p>
+               <p className='text-[green]'>Subscribed</p>
+              </div>
+              </>
+            )
+        })}
+      </div>
+    </Card>
       </div>
     </main>
     </div>

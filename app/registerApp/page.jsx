@@ -88,9 +88,10 @@ const Page = () => {
         </div>
         <Card
           style={{ backgroundColor: '#1a1d1e' }}
-          className="w-[50%] lg:w-[30%] mt-8 mx-auto p-5"
+          className=" w-[80%] sm:w-[50%] lg:w-[30%] mt-8 mx-auto p-2"
         >
-          <div className="flex max-w-md mt-5  flex-col gap-4">
+            <h1 className='text-white text-xl' >Create New App</h1>
+          <div className="flex max-w-md   flex-col gap-4">
             <div>
               <div className="mb-2 text-white ">
                 <Label color="black" htmlFor="email2" value="App Name" />

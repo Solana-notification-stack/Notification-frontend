@@ -24,7 +24,7 @@ const page = () => {
             >
               Get Started
             </a>
-            <a className="px-10 py-3 text-center text-white rounded shadow hover:bg-blue-50">
+            <a href='https://ronaks-organization.gitbook.io/notifease-docs' className="px-10 py-3 text-center text-white rounded shadow hover:bg-blue-50">
               Docs
             </a>
           </div>
