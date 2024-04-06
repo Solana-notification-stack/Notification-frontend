@@ -100,7 +100,7 @@ export default function NotificationModal({ appSecret }) {
                 <option value="BROADCAST">Broadcast</option>
                 {campaignData.map((data) => {
                   return (
-                    <option value={data.campaignId}>
+                    <option key={data.campaignId} value={data.campaignId}>
                       {data.campaignData.name}
                     </option>
                   );
