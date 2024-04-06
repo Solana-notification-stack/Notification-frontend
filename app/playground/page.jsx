@@ -170,10 +170,11 @@ export default function PlaygroundPage(props) {
         {userData?.map((data,index)=>{
             return(
               <>
-              <div className='flex text-xs sm:text-[16px] text-gray-400 justify-between mt-3 px-3'>
+              <div className=' flex gap-1 text-xs sm:text-[16px] text-gray-400 justify-between mt-3 sm:px-3'>
                <p>{index+1}</p>
-               <p>{data.userIdentifier}</p>
-               <p className='text-[green]'>Subscribed</p>
+               <p className='hidden sm:block'>{data.userIdentifier}</p>
+               <p className='sm:hidden'>{data.userIdentifier.slice(0,28)}.....</p>
+               <p  className='mr-3 text-[green]'>Subscribed</p>
               </div>
               </>
             )

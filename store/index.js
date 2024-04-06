@@ -32,7 +32,7 @@ export const authSlice = createSlice({
           state.appSecret=action.payload.appSecret
         },
         setAppData:(state,action)=>{
-          console.log("appData---->",action.payload.appData)
+         
           state.appData=action.payload.appData
         }
   },

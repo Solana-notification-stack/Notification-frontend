@@ -23,11 +23,15 @@ export default function NotificationModal({ appSecret }) {
   const [campaignData, setCampaignData] = useState([]);
   useEffect(() => {
     let arrayData = [];
-    for (const [key, value] of Object.entries(appData.campaigns)) {
-      let data = { campaignId: key, campaignData: value };
-      arrayData.push(data);
+    if(appData)
+    {
+      
+      for (const [key, value] of Object.entries(appData.campaigns)) {
+        let data = { campaignId: key, campaignData: value };
+        arrayData.push(data);
+      }
+      setCampaignData(arrayData);
     }
-    setCampaignData(arrayData);
   }, []);
 
   const handleSendNotification = async () => {

@@ -10,13 +10,20 @@ const Page = () => {
  
   const appData = useAppSelector((state)=>state.auth.appData)
   const [campaignData,setCampaignData]= useState([])
+
   useEffect(()=>{
     let arrayData=[]
-    for (const [key,value] of Object.entries(appData.campaigns)){
-      let data={campaignId:key,campaignData:value}
-      arrayData.push(data)
-    }
-    setCampaignData(arrayData)
+   
+
+      for (const [key,value] of Object.entries(appData.campaigns)){
+        let data={campaignId:key,campaignData:value}
+        arrayData.push(data)
+      }
+      if(arrayData){
+        setCampaignData(arrayData)
+      }
+      console.log("array data ---->",arrayData)
+  
   },[])
   return (
     <>
