@@ -50,7 +50,7 @@ const Page = () => {
           campaignData.map((data,index)=>{
             return(
               <>
-              <div className='flex  text-xs items-center sm:text-[16px] gap-2 text-gray-400 justify-between mt-3 px-3'>
+              <div key={data.campaignId} className='flex  text-xs items-center sm:text-[16px] gap-2 text-gray-400 justify-between mt-3 px-3'>
                <p>{index+1}</p>
                <p className='flex-1 text-left'>{data.campaignId}</p>
                <p className=' flex-1 text-left'>{data.campaignData.name}</p>
