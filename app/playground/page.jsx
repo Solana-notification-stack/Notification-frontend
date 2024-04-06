@@ -4,13 +4,19 @@ import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import Chart from './chart';
 import{ url }from '../constant'
 import NotificationModal from '../components/NotificationModal'
+import Page from '../campaigns/page';
 import { useEffect,useState } from 'react';
-import { useAppSelector } from '../../store/configureStore';
+import { useAppSelector,useAppDispatch } from '../../store/configureStore';
+import { setAppSecret,setAppData } from '../../store';
 import { useRouter,useSearchParams } from 'next/navigation';
 import Nav from '../nav';
 import Image from 'next/image';
 import bellIcon from '../../assets/bellIcon.png'
-import { Button } from 'flowbite-react';
+import { Tabs } from "flowbite-react";
+import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
+import { MdDashboard } from "react-icons/md";
+import { IoIosNotifications } from "react-icons/io";
+
 // const app = [
 //   { name: '/shop', value: 789 },
 //   { name: '/product-features', value: 676 },
@@ -34,6 +40,7 @@ const userData=[{
 
 export default function PlaygroundPage(props) {
   const token=useAppSelector(state=>state.auth.token)
+  const dispatch = useAppDispatch()
   const router=useRouter()
   const search =useSearchParams()
   const appId=search.get('appId')
@@ -55,7 +62,7 @@ export default function PlaygroundPage(props) {
           `${url}/getAppData/${appId}`,{
             method:'GET',
             headers: {
-               
+                
                 "Authorization": `Bearer ${token}`
               },
             
@@ -71,6 +78,8 @@ export default function PlaygroundPage(props) {
        }else {
          getAppDetails().then(v=>{
           setAppdata(v)
+          dispatch(setAppSecret({appSecret:v.appSecret}))
+          dispatch(setAppData({appData:v}))
          })
        }
     },[])
@@ -87,7 +96,9 @@ export default function PlaygroundPage(props) {
     <div className=' w-full'>
     <Nav/>
     </div>
-    <main className="p-4 md:p-10 mx-auto max-w-7xl">
+    <Tabs className='justify-evenly gap-5' aria-label="Tabs with icons" style="underline">
+    <Tabs.Item active title="Appboard" icon={HiUserCircle}>
+    <main className="px-4  mx-auto max-w-7xl">
     
       <Grid numItemsSm={2} numItemsLg={3} className="
        
@@ -171,6 +182,15 @@ export default function PlaygroundPage(props) {
     </Card>
       </div>
     </main>
+      </Tabs.Item>
+      <Tabs.Item title="Campaign" icon={MdDashboard}>
+       <Page />
+      </Tabs.Item>
+      <Tabs.Item title="Notification" icon={IoIosNotifications}>
+      
+      </Tabs.Item>
+    </Tabs>
+
     </div>
   );
 }
