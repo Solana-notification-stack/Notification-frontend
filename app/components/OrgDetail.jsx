@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux'
 import { Button, Card } from "flowbite-react";
 import AppListWidget from '../components/AppListWidget'
 import { Title } from '@tremor/react'
+import Loader from './Loader'
 const OrgDetail = () => {
-
+    const [isLoading,setIsLoading]=useState(false)
     const [registeredAppData,setRegisteredAppData]=useState([])
     const token = useSelector(state=>state.auth.token)
     const appDetails= [
@@ -16,6 +17,7 @@ const OrgDetail = () => {
     
      const getOrgData= async ()=>{
         try {
+            setIsLoading(true)
             const res= await fetch(
                 'https://api-7szm3raj4q-uc.a.run.app/organisationData',{
                   method:'GET',
@@ -29,6 +31,7 @@ const OrgDetail = () => {
               const result= await res.json()
               setOrgDetails(result)
               setRegisteredAppData(result.registeredAppsData)
+              setIsLoading(false)
               // console.log(result.registeredAppsData,"details")  
         } catch (error) {
              console.log(error)
@@ -41,6 +44,8 @@ const OrgDetail = () => {
     },[])
   return (
     <>
+    { !isLoading && 
+    <div>
     <Card style={{backgroundColor:"#1a1d1e"}}   className="max-w-sm  mt-5">
       <h5 className="text-2xl capitalize font-bold tracking-tight text-black dark:text-white">
         {orgDetails?.credentials?.orgName}
@@ -77,6 +82,14 @@ const OrgDetail = () => {
         }
       </div>
     </Card>
+    </div>
+    }
+    {
+      isLoading &&
+      <div className='absolute left-[50%] top-[50%]'>
+        <Loader/>
+      </div>
+    }
     </>
   )
 }

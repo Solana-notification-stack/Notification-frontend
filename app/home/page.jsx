@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import OrgDetail from '../components/OrgDetail'
 import { useAppSelector } from '../../store/configureStore';
+import Loader from '../components/Loader'
 export default async function IndexPage() {
   const token=useAppSelector(state=>state.auth.token)
   const router=useRouter()

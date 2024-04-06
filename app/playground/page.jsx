@@ -134,7 +134,7 @@ export default function PlaygroundPage(props) {
             <Flex className="mt-6">
               <div className='mx-auto'>
 
-            <NotificationModal />
+            <NotificationModal appSecret={appData.appSecret} />
               </div>
             </Flex>
            <div className='mt-3'>

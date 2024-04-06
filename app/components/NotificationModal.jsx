@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useAppSelector } from "../../store/configureStore";
 import {url} from '../constant'
 
-export  default function NotificationModal() {
+export  default function NotificationModal({appSecret}) {
   const [openModal, setOpenModal] = useState(false);
   const [email, setEmail] = useState('');
 const [title,setTitle]=useState("")
@@ -15,7 +15,7 @@ const [category,setCategory]=useState("")
 const [imageUrl,setImageUrl]=useState("")
   
 
-function onCloseModal(props) {
+function onCloseModal() {
     setOpenModal(false);
     setEmail('');
   }
@@ -31,15 +31,17 @@ const token= useAppSelector((state)=>state.auth.token)
                 notificationImage:imageUrl
             }
             const res= await fetch(
-                `${url}/getAppData/${props.appId}`,{
+                `${url}/appSendNotification`,{
                   method:'Post',
                   headers: {
-                     
-                      "Authorization": `Bearer ${token}`
+                    
+                      "Authorization": `${appSecret}`,
+                      'Content-Type': 'application/json',
                     },
                   body:JSON.stringify(formData)
                 }
               )
+              console.log("result2----->",res)
               const result= await res.json()
               console.log("result----->",result)
         }
@@ -70,10 +72,9 @@ const token= useAppSelector((state)=>state.auth.token)
                 <Label htmlFor="email" value="Title" />
               </div>
               <TextInput
-                
                 id="email"
                 placeholder="Title"
-                value={email}
+               
                 onChange={(event) => setTitle(event.target.value)}
                 required
               />
@@ -86,7 +87,7 @@ const token= useAppSelector((state)=>state.auth.token)
               <TextInput
                 id="description"
                 placeholder="Notification Body"
-                value={email}
+                
                 onChange={(event) => setDescription(event.target.value)}
                 required
               />
@@ -100,7 +101,7 @@ const token= useAppSelector((state)=>state.auth.token)
             </div>
            
             <div className="w-full">
-              <Button>Send</Button>
+              <Button onClick={handleSendNotification}>Send</Button>
             </div>
           
           </div>
