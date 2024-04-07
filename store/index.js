@@ -21,12 +21,13 @@ export const authSlice = createSlice({
        console.log(state.authState)
         state.authState="true"
         state.token=action.payload.token;
+        state.appData=null
         console.log(state.token,"redux")
     },
     setLogout:(state)=>{
        state.token=null
       state.authState=false
-
+      state.appData=null
         },
         setAppSecret:(state,action)=>{
           state.appSecret=action.payload.appSecret

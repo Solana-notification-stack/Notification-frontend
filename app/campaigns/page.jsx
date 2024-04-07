@@ -14,7 +14,7 @@ const Page = () => {
   useEffect(()=>{
     let arrayData=[]
    
-      if(appData.campaigns){
+      if(appData?.campaigns ){
         for (const [key,value] of Object.entries(appData.campaigns)){
           let data={campaignId:key,campaignData:value}
           arrayData.push(data)

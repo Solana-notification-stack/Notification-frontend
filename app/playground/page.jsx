@@ -136,23 +136,7 @@ export default function PlaygroundPage(props) {
            </div>
           </Card>
         ))}
-         {data.map((item) => (
-          <Card key={item.category}
-            className="text-white  bg-[#1a1d1e]"
-          >
-            <Title className="text-white text-center" >Send Notification</Title>
-            <Image alt='bellIcon' className='rounded-full mx-auto mt-5' height={120} src={bellIcon}/>
-            <Flex className="mt-6">
-              <div className='mx-auto'>
-
-            <NotificationModal appSecret={appData.appSecret} />
-              </div>
-            </Flex>
-           <div className='mt-3'>
-            
-           </div>
-          </Card>
-        ))}
+        
       </Grid>
       
       <div>
@@ -167,18 +151,31 @@ export default function PlaygroundPage(props) {
         <div className='flex text-gray-300'>
            
         </div>
-        {userData?.map((data,index)=>{
+        {appData?.usersData?.map((data,index)=>{
             return(
               <>
               <div className=' flex gap-1 text-xs sm:text-[16px] text-gray-400 justify-between mt-3 sm:px-3'>
                <p>{index+1}</p>
-               <p className='hidden sm:block'>{data.userIdentifier}</p>
-               <p className='sm:hidden'>{data.userIdentifier.slice(0,28)}.....</p>
+              
+               
+              <div>
+              <p className='hidden sm:block'>{data?.userIdentifier||"user not found"}</p>
+               <p className='sm:hidden'>{data?.userIdentifier.slice(0,28)}.....</p>
+              </div>
+              
                <p  className='mr-3 text-[green]'>Subscribed</p>
               </div>
               </>
             )
         })}
+        {
+          !appData?.usersData?.length 
+           &&
+           <div className='relative h-full text-gray-500'> 
+             <p className=' absolute  left-[40%]'>No Current Users</p>
+           </div>
+
+        }
       </div>
     </Card>
       </div>
@@ -188,7 +185,28 @@ export default function PlaygroundPage(props) {
        <Page />
       </Tabs.Item>
       <Tabs.Item title="Notification" icon={IoIosNotifications}>
-      
+      <Grid numItemsSm={2} numItemsLg={3} className="
+       mx-6
+      gap-6">
+        {data.map((item) => (
+          <Card key={item.category}
+            className="text-white  lg:mx-5  bg-[#1a1d1e]"
+          >
+            <Title className="text-white text-center" >Send Notification</Title>
+            <Image alt='bellIcon' className='rounded-full mx-auto mt-5' height={120} src={bellIcon}/>
+            <Flex className="mt-6">
+              <div className='mx-auto'>
+
+            <NotificationModal appSecret={appData.appSecret} />
+              </div>
+            </Flex>
+           <div className='mt-3'>
+            
+           </div>
+          </Card>
+        ))}
+
+      </Grid>
       </Tabs.Item>
     </Tabs>
 
