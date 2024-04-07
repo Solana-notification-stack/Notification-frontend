@@ -23,7 +23,7 @@ export default function NotificationModal({ appSecret }) {
   const [campaignData, setCampaignData] = useState([]);
   useEffect(() => {
     let arrayData = [];
-    if(appData)
+    if(appData.campaign)
     {
       
       for (const [key, value] of Object.entries(appData.campaigns)) {

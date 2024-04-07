@@ -14,7 +14,7 @@ const page = () => {
             <span className="block text-[orange]">Notify The Web</span>
             <span className="block text-white m-5 md:mt-9">like never before</span>
           </h1>
-          <p className="mt-5 text-center text-[#b8b3b3]">
+          <p className="mt-1 text-center text-[#b8b3b3]">
             Quickly send notifications all over the world
           </p>
           <div className="flex mt-3 mb-12 items-center justify-center space-x-5">

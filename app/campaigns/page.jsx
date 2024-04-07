@@ -14,15 +14,18 @@ const Page = () => {
   useEffect(()=>{
     let arrayData=[]
    
-
-      for (const [key,value] of Object.entries(appData.campaigns)){
-        let data={campaignId:key,campaignData:value}
-        arrayData.push(data)
-      }
-      if(arrayData){
+      if(appData.campaigns){
+        for (const [key,value] of Object.entries(appData.campaigns)){
+          let data={campaignId:key,campaignData:value}
+          arrayData.push(data)
+        }
+        if(arrayData){
+          setCampaignData(arrayData)
+        }
+        console.log("array data ---->",arrayData)
+      }else{
         setCampaignData(arrayData)
       }
-      console.log("array data ---->",arrayData)
   
   },[])
   return (
