@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 justify-between">
               <div className="flex">
-                <div className="flex flex-shrink-0 items-center">
+                <div className="flex gap-3 flex-shrink-0 items-center">
                   <svg
                     width="32"
                     height="32"
@@ -65,6 +65,10 @@ export default function Navbar() {
                       fill="black"
                     />
                   </svg>
+                  <p className='text-[16px] text-[#0095b3] font-bold'>
+                    Notif
+                    <span className='text-[#0095b3]'>Ease</span>
+                  </p>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (
@@ -131,7 +135,7 @@ export default function Navbar() {
                   className={classNames(
                     pathname === item.href
                       ? 'bg-slate-50 border-slate-500 text-slate-700'
-                      : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800',
+                      : 'border-transparent text-white hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800',
                     'block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
                   )}
                   aria-current={pathname === item.href ? 'page' : undefined}
@@ -139,6 +143,27 @@ export default function Navbar() {
                   {item.name}
                 </Disclosure.Button>
               ))}
+              <Disclosure.Button
+              as="a"
+              onClick={()=>{
+                if(token)
+                {
+                  dispatch(setLogout())
+                router.push('/')
+                }else
+                {
+                  router.push('/login')
+                }
+            }}
+                 className={classNames(
+                  pathname === '/logout'
+                    ? 'bg-slate-50 border-slate-500 text-slate-700'
+                    : 'border-transparent text-white hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800',
+                  'block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
+                )}
+              >
+                Logout
+              </Disclosure.Button>
             </div>
             
           </Disclosure.Panel>
