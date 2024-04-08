@@ -58,7 +58,7 @@ const page = () => {
         </div>
       </div>
       <StatsCard/>
-      <div className="[background:var(--Secondary,#050505)]">
+      <div className="">
         <div  className="mt-[2rem] pt-[5rem]  flex justify-center ">
           <FeaturesCard/>
         </div>

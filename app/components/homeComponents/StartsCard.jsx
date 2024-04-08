@@ -2,7 +2,7 @@ import React from 'react'
 
 const StartsCard = () => {
   return (
-    <div className='w-[80%] my-12 pt-10 mx-auto gap-4 flex justify-between items-center'>
+    <div className='w-[80%]  sm:my-12 pt-10 mx-auto gap-4 flex justify-between items-center'>
         
         <div>
         <p className='text-[color:var(--Primary,#FFF)] text-center [font-family:Sora] text-[26px] md:text-[46px] font-semibold leading-[140%]'>
