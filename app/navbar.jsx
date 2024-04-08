@@ -22,7 +22,7 @@ export default function Navbar() {
     { name: 'Dashboard', href: '/home' },
     {name:'Register App',href:'/registerApp'},
    
-    {name:'Docs',href:'https://ronaks-organization.gitbook.io/notifease-docs'}
+    {name:'Docs',href:'https://docs.notifease.site'}
     
 
    

@@ -1,23 +1,19 @@
 'use client';
 
-import { Button, Checkbox, Label, Modal, TextInput } from 'flowbite-react';
+import { Button, Card, Checkbox, Label, Modal, TextInput } from 'flowbite-react';
 import { useState, useEffect } from 'react';
 import { useAppSelector } from '../../store/configureStore';
-import { url } from '../constant';
+import { cardStyle, url } from '../constant';
 import { toast } from 'react-toastify';
 
 export default function NotificationModal({ appSecret }) {
-  const [openModal, setOpenModal] = useState(false);
-  const [email, setEmail] = useState('');
+  // const [openModal, setOpen
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
-  function onCloseModal() {
-    setOpenModal(false);
-    setEmail('');
-  }
+
   const token = useAppSelector((state) => state.auth.token);
   const appData = useAppSelector((state) => state.auth.appData);
   const [campaignData, setCampaignData] = useState([]);
@@ -68,30 +64,17 @@ export default function NotificationModal({ appSecret }) {
 
   return (
     <>
-      <Button
-        className="text-black  bg-white"
-        onClick={() => setOpenModal(true)}
-      >
-        Send
-      </Button>
-      <Modal
-        show={openModal}
-        className="bg-[#151718]"
-        size="md"
-        onClose={onCloseModal}
-        popup
-      >
-        <Modal.Header />
-        <Modal.Body>
+
+        <Card className={`${cardStyle}`}>
           <div className="space-y-3 ">
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+            <h3 className="text-xl font-medium text-white">
               Fill notification details
             </h3>
 
             <div class="col-span-2 sm:col-span-1">
               <label
                 htmlFor="category"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                class="block mb-2 text-sm font-medium text-white"
               >
                 Category
               </label>
@@ -100,7 +83,7 @@ export default function NotificationModal({ appSecret }) {
                   console.log(e.target.value)
                   setCategory(e.target.value)}}
                 id="category"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               >
                 <option >Select category</option>
                 <option value="BROADCAST">Broadcast</option>
@@ -114,10 +97,11 @@ export default function NotificationModal({ appSecret }) {
               </select>
             </div>
             <div>
-              <div className=" block">
+              <div className=" mb-2 block">
                 <Label htmlFor="email" value="Title" />
               </div>
               <TextInput
+              style={{backgroundColor:"transparent"}}
                 id="email"
                 placeholder="Title"
                 onChange={(event) => setTitle(event.target.value)}
@@ -130,6 +114,8 @@ export default function NotificationModal({ appSecret }) {
                 <Label htmlFor="email" value="Description" />
               </div>
               <TextInput
+              style={{backgroundColor:"transparent"}}
+
                 id="description"
                 placeholder="Notification Body"
                 onChange={(event) => setDescription(event.target.value)}
@@ -142,6 +128,8 @@ export default function NotificationModal({ appSecret }) {
                 <Label htmlFor="text" value="Notification Image URL" />
               </div>
               <TextInput
+              style={{backgroundColor:"transparent"}}
+
                 onChange={(e) => setImageUrl(e.target.value)}
                 id="text"
                 type="text"
@@ -150,11 +138,11 @@ export default function NotificationModal({ appSecret }) {
             </div>
 
             <div className="w-full">
-              <Button onClick={handleSendNotification}>Send</Button>
+              <Button className='bg-white text-black hover:bg-white ' onClick={handleSendNotification}>Send</Button>
             </div>
           </div>
-        </Modal.Body>
-      </Modal>
+        </Card>
+ 
     </>
   );
 }

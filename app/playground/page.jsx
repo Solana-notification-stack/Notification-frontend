@@ -17,6 +17,7 @@ import {  HiUserCircle } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import { cardStyle } from '../constant';
+
 // const app = [
 //   { name: '/shop', value: 789 },
 //   { name: '/product-features', value: 676 },
@@ -142,7 +143,7 @@ export default function PlaygroundPage(props) {
       <div>
       <Card  
        
-      className={` ${cardStyle} mt-10 min-h-[30vh] lg:w-[70%]`}>
+      className={`  bg-green-400 lg:w-[70%]`}>
         <div className='flex gap-4  w-full'>
       <h1 className=' text-white mb-1 font-bold text-2xl'> Users</h1>
        
@@ -183,32 +184,19 @@ export default function PlaygroundPage(props) {
       </div>
     </main>
       </Tabs.Item>
-      <Tabs.Item title="Campaign" icon={MdDashboard}>
+      <Tabs.Item title="Campaign" icon={MdDashboard} className='bg-white
+      '>
        <Page />
       </Tabs.Item>
       <Tabs.Item title="Notification" icon={IoIosNotifications}>
-      <Grid numItemsSm={2} numItemsLg={3} className="
-       mx-6
-      gap-6">
-        {data.map((item) => (
-          <Card key={item.category}
-            className="text-white  lg:mx-5  bg-[#1a1d1e]"
-          >
-            <Title className="text-white text-center" >Send Notification</Title>
-            <Image alt='bellIcon' className='rounded-full mx-auto mt-5' height={120} src={bellIcon}/>
-            <Flex className="mt-6">
-              <div className='mx-auto'>
+   
+ <div className={`w-[40%] h-full m-auto ${cardStyle} `}>
 
-            <NotificationModal appSecret={appData.appSecret} />
-              </div>
-            </Flex>
-           <div className='mt-3'>
-            
-           </div>
-          </Card>
-        ))}
+          <NotificationModal appSecret={appData.appSecret}/>
+ </div>
+        
 
-      </Grid>
+  
       </Tabs.Item>
     </Tabs>
 

@@ -15,9 +15,9 @@ export default function LandingNav() {
   
    const router = useRouter()
   const navigation = [
-    { name: 'Solution', href: '/home' },
-    {name:'Resources',href:'/registerApp'},
-    {name:'Pricing',href:'/docs'},
+    { name: 'Solution', href: '#solution' },
+    {name:'Resources',href:'https://docs.notifease.site'},
+    {name:'Pricing',href:'#pricing'},
     {name:'Get Started',href:'/login'}
 
    
@@ -71,7 +71,7 @@ export default function LandingNav() {
                     />
                   </svg>
                   <div className='font-bold mx-3  text-white'>
-                 NotifyMe
+                 NotifiEase
                 </div>
                 <div className="hidden align-end sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (
@@ -93,7 +93,7 @@ export default function LandingNav() {
                 </div>
                 </div>
                 <div className='flex items-center'>
-                    <Button className='bg-white invisible  md:visible  text-black none hover:bg-gray-300'>Get Started</Button>
+                    <Button className=' [background:linear-gradient(180deg,rgba(144.86,173.46,185.71,0.8)_0%,rgba(32.16,80.74,101.56,0.1)_100%)] text-white invisible  md:visible  none hover:border-white hover:border'>Get Started</Button>
                 </div>
               </div>
              
