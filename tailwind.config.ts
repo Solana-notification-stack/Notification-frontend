@@ -10,6 +10,10 @@ export default {
     transparent: 'transparent',
     current: 'currentColor',
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/app/Looper.png')",
+        
+      },
       colors: {
         // light mode
         tremor: {
