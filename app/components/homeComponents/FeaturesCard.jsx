@@ -4,6 +4,7 @@ import loan from '../../../assets/digitalloanHome.svg';
 import database from '../../../assets/databasehome.svg';
 import mobile from '../../../assets/homeMobile2.png';
 import Image from 'next/image';
+import SparklesPreview from '../Animation';
 const FeaturesCard = () => {
   return (
     <div className="px-8 md:my-12">
@@ -20,11 +21,10 @@ const FeaturesCard = () => {
               <span className="">
                 <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] ">
                   {' '}
-                  Cutting Edge Technology
+                  Serverless Integration
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Id eleifend quis urna tellus tempor facilisis at semper ac.
-                  Interdum tortor ut ac.
+                  Send Notificatiosn and Manage users without hassle for creating server
                 </p>
               </span>
             </div>
@@ -37,11 +37,10 @@ const FeaturesCard = () => {
               <span className="">
                 <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] ">
                   {' '}
-                  Cutting Edge Technology
+                  One Click Notification
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Id eleifend quis urna tellus tempor facilisis at semper ac.
-                  Interdum tortor ut ac.
+                  Engage users eith your Notifications in just ONe click
                 </p>
               </span>
             </div>
@@ -54,18 +53,19 @@ const FeaturesCard = () => {
               <span className="">
                 <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] ">
                   {' '}
-                  Cutting Edge Technology
+                  On-Chain Activity Alerts
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Id eleifend quis urna tellus tempor facilisis at semper ac.
-                  Interdum tortor ut ac.
+                  Track onchain activity of your users to promote your app.
                 </p>
               </span>
             </div>
           </div>
         </div>
-        <div className="flex-1 mb-0 hidden lg:block self-end  ">
-          <Image className="  z-[1000] " height={200} width={400} src={mobile} />
+        <div className="flex-1  hidden  self-end  lg:flex flex-col items-center justify-center ">
+        <SparklesPreview title={"Features"}/>
+          
+          <Image className="  z-[1000] " height={200} width={400} src={mobile} /> 
         </div>
       </section>
     </div>

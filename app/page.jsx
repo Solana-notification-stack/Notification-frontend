@@ -6,6 +6,7 @@ import LandingNav from './components/LandingNav';
 import Team from './components/Team';
 import StatsCard from './components/homeComponents/StartsCard'
 import FeaturesCard from './components/homeComponents/FeaturesCard'
+import SparklesPreview from './components/Animation';
 const page = () => {
   return (
     <div className="" style={gradientStyle2}>
