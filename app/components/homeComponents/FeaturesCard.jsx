@@ -21,11 +21,10 @@ const FeaturesCard = () => {
               <span className="">
                 <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] ">
                   {' '}
-                  Cutting Edge Technology
+                  Serverless Integration
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Id eleifend quis urna tellus tempor facilisis at semper ac.
-                  Interdum tortor ut ac.
+                  Send Notificatiosn and Manage users without hassle for creating server
                 </p>
               </span>
             </div>
@@ -38,11 +37,10 @@ const FeaturesCard = () => {
               <span className="">
                 <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] ">
                   {' '}
-                  Cutting Edge Technology
+                  One Click Notification
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Id eleifend quis urna tellus tempor facilisis at semper ac.
-                  Interdum tortor ut ac.
+                  Engage users eith your Notifications in just ONe click
                 </p>
               </span>
             </div>
@@ -55,11 +53,10 @@ const FeaturesCard = () => {
               <span className="">
                 <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] ">
                   {' '}
-                  Cutting Edge Technology
+                  On-Chain Activity Alerts
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Id eleifend quis urna tellus tempor facilisis at semper ac.
-                  Interdum tortor ut ac.
+                  Track onchain activity of your users to promote your app.
                 </p>
               </span>
             </div>
