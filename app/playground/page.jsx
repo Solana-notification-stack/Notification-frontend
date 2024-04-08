@@ -93,8 +93,8 @@ export default function PlaygroundPage(props) {
       }
     ];
   return (
-    <div div className='  '>
-    <div className=' w-full'>
+    <div div className='bg-black  '>
+    <div className='h-full w-full'>
     <Nav/>
     </div>
     <Tabs className='justify-evenly gap-5' aria-label="Tabs with icons" style="underline">
@@ -118,7 +118,7 @@ export default function PlaygroundPage(props) {
               <Text className="text-[#cdcdcd]">Total Users</Text>
             </Flex>
             <Flex className="mt-6">
-              <Text className="text-white" >Details</Text>
+              <Text className="font-bold text-white" >Details</Text>
             
             </Flex>
            <div className='mt-3'>
@@ -126,7 +126,7 @@ export default function PlaygroundPage(props) {
               item.data.map((data)=>{
                  return(
                   <>
-                  <div key={data.name} className='flex text-white   justify-between'>
+                  <div key={data.name} className='flex text-white  mt-3  justify-between'>
                     <p >{data.name}</p>
                     <p className="text-[#cdcdcd]">{data.value}</p>
                   </div>
@@ -143,7 +143,7 @@ export default function PlaygroundPage(props) {
       <div>
       <Card  
        
-      className={`  bg-green-400 lg:w-[70%]`}>
+      className={`mt-5  ${cardStyle} lg:w-[70%]`}>
         <div className='flex gap-4  w-full'>
       <h1 className=' text-white mb-1 font-bold text-2xl'> Users</h1>
        
@@ -157,7 +157,7 @@ export default function PlaygroundPage(props) {
         {appData?.usersData?.map((data,index)=>{
             return(
               <>
-              <div className=' flex gap-1 text-xs sm:text-[16px] text-gray-400 justify-between mt-3 sm:px-3'>
+              <div className=' flex gap-1 text-xs sm:text-[16px] text-gray-400 justify-between mt-6 sm:px-3'>
                <p>{index+1}</p>
               
                
@@ -190,7 +190,7 @@ export default function PlaygroundPage(props) {
       </Tabs.Item>
       <Tabs.Item title="Notification" icon={IoIosNotifications}>
    
- <div className={`w-[40%] h-full m-auto ${cardStyle} `}>
+ <div className={`w-[90%] md:w-[40%] h-screen m-auto ${cardStyle} `}>
 
           <NotificationModal appSecret={appData.appSecret}/>
  </div>
