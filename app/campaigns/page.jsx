@@ -6,6 +6,7 @@ import { Button } from 'flowbite-react';
 import Nav from '../nav'
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import CreateCampaign from '../components/campaigns/CreateCampaignCard'
+import { cardStyle } from '../constant';
 const Page = () => {
  
   const appData = useAppSelector((state)=>state.auth.appData)
@@ -29,9 +30,9 @@ const Page = () => {
   
   },[])
   return (
-    <>
+    <div className=''>
    
-    <div className="text-center text-3xl  text-white">
+    <div className=" text-center text-3xl  text-white">
           Create a new campaign
           <p className="text-xs text-gray-400 mt-2">
             Quickly create personalized campaigns to target specific users
@@ -45,7 +46,7 @@ const Page = () => {
 
       </Grid>
  
-      <Card style={{backgroundColor:"#1a1d1e"}} className='mt-10 min-h-[30vh] lg:w-[70%] '>
+      <Card  className={`mt-10 min-h-[30vh] lg:w-[70%] ${cardStyle}`}>
         <div className='flex gap-4  w-full'>
       <h1 className=' text-white mb-1 font-bold text-2xl'> Campaigns</h1>
        
@@ -60,13 +61,13 @@ const Page = () => {
           campaignData.map((data,index)=>{
             return(
               <>
-              <div key={data.campaignId} className='flex  text-xs items-center sm:text-[16px] gap-2 text-gray-400 justify-between mt-3 px-3'>
+              <div key={data.campaignId} className='flex my- text-xs items-center sm:text-[16px] gap-2 text-gray-400 justify-between mt-3 px-3'>
                <p>{index+1}</p>
                <p className='flex-1 text-left'>{data.campaignId}</p>
                <p className=' flex-1 text-left'>{data.campaignData.name}</p>
                <p className=' flex-1 text-[green]'>Subscribed</p>
                <div className=' flex-2 m'>
-               <Button size={"xs"}>Delete</Button>
+               <Button className='bg-white text-black hover:bg-white' size={"xs"}>Delete</Button>
                </div>
               </div>
               </>
@@ -77,7 +78,7 @@ const Page = () => {
     </Card>
 
         </main>
-    </>
+    </div>
   )
 }
 

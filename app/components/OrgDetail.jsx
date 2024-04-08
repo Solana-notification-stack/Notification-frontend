@@ -47,7 +47,7 @@ const OrgDetail = () => {
     <>
     { !isLoading && 
     <div>
-    <Card className={` ${cardStyle} [background:linear-gradient(180deg,rgba(5,5,5,0)_0%,rgb(5,5,5)_100%)] max-w-sm  mt-5`}>
+    <Card className={` ${cardStyle}  max-w-sm  mt-5`}>
       <h5 className="text-2xl capitalize font-bold tracking-tight text-black dark:text-white">
         {orgDetails?.credentials?.orgName}
       </h5>
