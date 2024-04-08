@@ -18,7 +18,7 @@ export default function LandingNav() {
     { name: 'Solution', href: '#solution' },
     {name:'Resources',href:'https://docs.notifease.site'},
     {name:'Pricing',href:'#pricing'},
-    {name:'Get Started',href:'/login'}
+   
 
    
   ];
@@ -93,7 +93,7 @@ export default function LandingNav() {
                 </div>
                 </div>
                 <div className='flex  items-center'>
-                    <Button className='h-[90%] [background:linear-gradient(180deg,rgba(144.86,173.46,185.71,0.8)_0%,rgba(32.16,80.74,101.56,0.1)_100%)] text-white invisible  md:visible  none hover:border-white hover:border'>Get Started</Button>
+                    <Button className='h-[75%] [background:linear-gradient(180deg,rgba(144.86,173.46,185.71,0.8)_0%,rgba(32.16,80.74,101.56,0.1)_100%)] text-white invisible  md:visible rounded-full none hover:border-white hover:border'>Get Started</Button>
                 </div>
               </div>
              
