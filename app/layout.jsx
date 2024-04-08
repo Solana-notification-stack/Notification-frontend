@@ -8,9 +8,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import dynamic from "next/dynamic";
 import { ToastContainer } from 'react-toastify';
 export const metadata = {
-  title: 'Next.js App Router + NextAuth + Tailwind CSS',
+  title: 'NotifEase',
   description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, ESLint, and Prettier.'
+    'Mobile Notification Stack For Solana'
 };
 const ReduxProvider = dynamic(() => import("../store/ReduxProvider"), {
   ssr: false
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full ">
-      <body className="h-full bg-black ">
+      <body className="h-full ">
      <ReduxProvider> 
         <ToastContainer position='top-right'/>
         {children}
