@@ -24,7 +24,7 @@ const FeaturesCard = () => {
                   Serverless Integration
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Send Notificatiosn and Manage users without hassle for creating server
+                  Send Notification and Manage users without hassle for creating server
                 </p>
               </span>
             </div>
@@ -40,7 +40,7 @@ const FeaturesCard = () => {
                   One Click Notification
                 </p>
                 <p className=" mt-6 w-[60%] shrink-0 text-[color:var(--Text,#CDCDCD)] [font-family:Sora] text-lg font-normal leading-[160%]">
-                  Engage users eith your Notifications in just ONe click
+                  Engage users eith your Notifications in just One click
                 </p>
               </span>
             </div>
