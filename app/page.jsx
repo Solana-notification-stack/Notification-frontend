@@ -32,7 +32,7 @@ const page = () => {
           >
             
             <span className="block  text-white mt-3 md:mt-3">
-              Solana's Mobile{' '}
+              Solana&apos;s Mobile
             </span>
             <span className="block  text-white mt-3 md:mt-3">
               Notification stack
