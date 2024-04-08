@@ -45,7 +45,7 @@ export default function LandingNav() {
           }}
           className="mx-auto w-full  px-4 sm:px-6 lg:px-8">
             <div className="flex  h-16">
-              <div className="flex justify-evenly gap-[8rem] lg:gap-[40rem] w-full">
+              <div className="flex justify-evenly sm:gap-[8rem] lg:gap-[40rem] w-full">
                 
                 <div className="flex  flex-shrink-0 items-center">
                     
