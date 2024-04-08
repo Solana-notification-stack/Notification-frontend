@@ -65,9 +65,9 @@ export default function Navbar() {
                       fill="black"
                     />
                   </svg>
-                  <p className='text-[16px] text-[#0095b3] font-bold'>
+                  <p className='text-[16px] text-white font-bold'>
                     Notif
-                    <span className='text-[#0095b3]'>Ease</span>
+                    <span className='text-white'>Ease</span>
                   </p>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">

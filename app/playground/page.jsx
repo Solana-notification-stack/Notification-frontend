@@ -93,7 +93,7 @@ export default function PlaygroundPage(props) {
       }
     ];
   return (
-    <div div className='bg-black  '>
+    <div div className='bg-black min-h-screen  '>
     <div className='h-full w-full'>
     <Nav/>
     </div>

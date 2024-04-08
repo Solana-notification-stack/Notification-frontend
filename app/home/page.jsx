@@ -28,7 +28,7 @@ export default async function IndexPage() {
     >
     
        <Nav/>
-     <main className="p-4  md:p-10 mx-auto max-w-7xl">
+     <main className="p-4   md:p-10  mx-auto max-w-7xl">
      
       <Title className="text-white">Your App Details</Title>
       <Search />

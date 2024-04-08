@@ -1,4 +1,5 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
+import SparklesPreview from './Animation';
 
 const Pricing = () => {
   return (
@@ -13,6 +14,10 @@ const Pricing = () => {
           <p className="text-center text-gray-600">
             It features various App Specific Notification Plans
           </p>
+          <div className='mt-5'>
+
+          <SparklesPreview/>
+          </div>
         </div>
         <div className="flex flex-col  p-10 space-x-0 space-y-5  rounded-lg md:space-y-0 md:space-x-5 md:flex-row">
           <div className="  flex flex-col items-start bg-[rgba(255, 255, 255, 0.5)]  overflow-hidden  border rounded-lg md:w-1/2">
