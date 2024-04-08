@@ -3,7 +3,7 @@ import SparklesPreview from './Animation';
 
 const Pricing = () => {
   return (
-    <div className="w-full py-10 mt-12">
+    <div id='pricing' className="w-full py-10 mt-12">
       <div className="relative flex flex-col px-5 mx-auto space-y-5 md:w-3/4">
         <div className="flex flex-col items-center">
           <h2 className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-4xl md:text-5xl font-semibold mb-5  leading-[140%]">

@@ -59,12 +59,12 @@ const page = () => {
         </div>
       </div>
       <StatsCard/>
-      <div className="">
+      <div id="solution" className="">
         <div  className="mt-[2rem] pt-[5rem]  flex justify-center ">
           <FeaturesCard/>
         </div>
-
-        <Pricing />
+        
+        <Pricing  />
         <Team />
       </div>
     </div>
