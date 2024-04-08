@@ -14,9 +14,9 @@ function Team() {
     <div>Creating NotifEase</div>
     </div>
     <div className='flex items-center justify-around flex-wrap gap-6'>
-<TeamImage name={"Ronak Gupta"} desc={"Developer"} github={"https://github.com/ronakgupta11"} twitter={"https://x.com/ronakguptark07"}/>
-<TeamImage name={"Shivam Shaw"} desc={"Developer"} github={"https://github.com/tryptophan36"} twitter={"https://x.com/tryptophan36"}/>
-<TeamImage name={"Shobhit Kumawat"} desc={"Product Management"} twitter={"https://x.com/shobhit_k07"}/>
+<TeamImage name={"Ronak Gupta"} image={"https://firebasestorage.googleapis.com/v0/b/solana-notifications.appspot.com/o/WhatsApp%20Image%202024-04-09%20at%2005.06.53.jpeg?alt=media&token=9ed76245-80e9-4f97-9e49-e37062d0d609"}desc={"Developer"} github={"https://github.com/ronakgupta11"} twitter={"https://x.com/ronakguptark07"}/>
+<TeamImage name={"Shivam Shaw"} image={"https://firebasestorage.googleapis.com/v0/b/solana-notifications.appspot.com/o/WhatsApp%20Image%202024-04-09%20at%2005.06.35.jpeg?alt=media&token=c9c99a47-cfa8-4b66-a08a-27156c650778"} desc={"Developer"} github={"https://github.com/tryptophan36"} twitter={"https://x.com/tryptophan36"}/>
+<TeamImage name={"Shobhit Kumawat"} image={"https://firebasestorage.googleapis.com/v0/b/solana-notifications.appspot.com/o/WhatsApp%20Image%202024-04-09%20at%2005.06.34.jpeg?alt=media&token=d2cb0e6b-195e-4474-8773-bc58b66affc5"} desc={"Product Management"} twitter={"https://x.com/shobhit_k07"}/>
 
 
     </div>
