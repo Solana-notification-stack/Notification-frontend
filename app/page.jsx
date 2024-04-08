@@ -3,13 +3,14 @@ import Features from './components/Features';
 import Pricing from './components/Pricing';
 import { gradientStyle1, gradientStyle2, featuresStyle } from './constant';
 import LandingNav from './components/LandingNav';
+import Team from "./components/Team"
 
 const page = () => {
   return (
     <div className="" style={gradientStyle2}>
       <LandingNav />
 
-      <div className="lg:mx-5  block sm:flex justify-center  " style={gradientStyle1}>
+      <div style={{backgroundImage:`url(/Looper.png)`}} className="lg:mx-5  block sm:flex justify-center  " >
         <div className="flex flex-col lg:w-[70%]  ml-3 lg:ml-9 items-left  justify-center  h-[80vh]   ">
           <h1
             styles={{
@@ -56,7 +57,9 @@ const page = () => {
         <div style={featuresStyle} className="mt-[5rem] lg:mx-5 br-">
           <Features />
         </div>
+        
         <Pricing />
+        <Team/>
       </div>
     </div>
   );
