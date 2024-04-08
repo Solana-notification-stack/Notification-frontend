@@ -9,7 +9,7 @@ import FeaturesCard from './components/homeComponents/FeaturesCard'
 import SparklesPreview from './components/Animation';
 const page = () => {
   return (
-    <div className="" style={gradientStyle2}>
+    <div className=" bg-black" >
       <LandingNav />
 
       <div
