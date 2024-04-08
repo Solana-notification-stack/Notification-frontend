@@ -10,7 +10,7 @@ function SparklesPreview({ title }) {
     //   <h2 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
     //     {title}
     //   </h2>
-      <div className="w-[40rem] h-40 relative rounded-full">
+      <div className="hidden sm:block w-[40rem] h-40 relative rounded-full">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-yellow-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-yellow-500 to-transparent h-px w-3/4" />
