@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import { useAppDispatch,useAppSelector } from '../../store/configureStore';
 import {ToastContainer, toast} from 'react-toastify'
 import { cardStyle } from '../constant';
+import NELogo from '../../assets/NELogo.png'
+import Image from 'next/image';
 const LoginForm = () => { 
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
@@ -56,7 +58,7 @@ const LoginForm = () => {
   <div className={`flex   h-full flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0`}>
   
       <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-          <img className="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo"/>
+          <Image width={72} className="" src={NELogo} alt="logo"/>
           NotifEase
       </a>
       <div

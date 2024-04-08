@@ -24,7 +24,7 @@ export default async function IndexPage() {
   )
   return (
     <div 
-     className='bg-black h-screen'
+     className='bg-black min-h-screen'
     >
     
        <Nav/>
