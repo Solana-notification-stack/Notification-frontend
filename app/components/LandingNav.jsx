@@ -6,6 +6,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Button } from 'flowbite-react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import NELogo from '../../assets/NELogo.png'
 import Image from 'next/image';
 function classNames(...classes) { 
@@ -75,7 +76,9 @@ export default function LandingNav() {
                 </div>
                 </div>
                 <div className='flex  items-center'>
+                  <Link href={"/login"}>
                     <Button className='h-[75%] bg-white text-black invisible  md:visible rounded-full none hover:scale-110 transition-transform duration-300'>Get Started</Button>
+                  </Link>
                 </div>
               </div>
              
