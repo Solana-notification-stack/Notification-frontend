@@ -19,7 +19,7 @@ const page = () => {
           backgroundImage: `url("/Looper.png")` }}
         className="lg:mx-5  block sm:flex justify-center  "
       >
-        <div className="flex flex-col lg:w-[70%] pl-5  items-left  justify-center  h-[90vh]   ">
+        <div className="flex flex-col lg:w-[70%] pl-5  items-left   sm:justify-center  h-[60vh] sm:h-[90vh]   ">
           <h1
             styles={{
               background:
@@ -29,7 +29,7 @@ const page = () => {
               backgroundClip: 'text',
               textFillColor: 'transparent'
             }}
-            className="text-[2.5rem] leading-8  sm:text-5xl lg:text-[4.2rem] font-extrabold text-left "
+            className="text-[2.5rem] mt-[6rem] sm:mt-0  leading-8  sm:text-5xl lg:text-[4.2rem] font-extrabold text-left "
           >
             
             <span className="block  text-white mt-3 md:mt-3">
@@ -59,7 +59,7 @@ const page = () => {
         </div>
       </div>
       <StatsCard/>
-      <div className="[background:var(--Secondary,#050505)]">
+      <div className="">
         <div  className="mt-[2rem] pt-[5rem]  flex justify-center ">
           <FeaturesCard/>
         </div>

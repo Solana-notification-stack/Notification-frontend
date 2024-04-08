@@ -7,7 +7,7 @@ import Image from 'next/image';
 import SparklesPreview from '../Animation';
 const FeaturesCard = () => {
   return (
-    <div className="px-8 my-12">
+    <div className="px-8 md:my-12">
       <section className="flex justify-center lg:gap-10 ">
         <div className="inline-flex flex-2 mt-8 flex-col items-start gap-8">
           <p className=" text-[color:var(--Primary,#FFF)] [font-family:Sora] text-4xl md:text-5xl font-semibold mb-5 md:w-[70%] leading-[140%]">
@@ -19,7 +19,7 @@ const FeaturesCard = () => {
                 <Image src={loan} />
               </div>
               <span className="">
-                <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] hover:scale-110 transition-transform duration-300">
+                <p className="text-[color:var(--Primary,#FFF)] [font-family:Sora] text-[32px] font-semibold leading-[140%] ">
                   {' '}
                   Cutting Edge Technology
                 </p>
@@ -65,10 +65,10 @@ const FeaturesCard = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1  invisible lg:visible self-end  flex flex-col items-center justify-center ">
+        <div className="flex-1  hidden  self-end  lg:flex flex-col items-center justify-center ">
         <SparklesPreview title={"Features"}/>
           
-          <Image className="z-[1000] " height={200} width={400} src={mobile} /> 
+          <Image className="  z-[1000] " height={200} width={400} src={mobile} /> 
         </div>
       </section>
     </div>
