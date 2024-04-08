@@ -4,6 +4,7 @@ import loan from '../../../assets/digitalloanHome.svg';
 import database from '../../../assets/databasehome.svg';
 import mobile from '../../../assets/homeMobile2.png';
 import Image from 'next/image';
+import SparklesPreview from '../Animation';
 const FeaturesCard = () => {
   return (
     <div className="px-8 my-12">
@@ -64,8 +65,10 @@ const FeaturesCard = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 mb-0 invisible lg:visible self-end  ">
-          <Image className="z-[1000] " height={200} width={400} src={mobile} />
+        <div className="flex-1  invisible lg:visible self-end  flex flex-col items-center justify-center ">
+        <SparklesPreview title={"Features"}/>
+          
+          <Image className="z-[1000] " height={200} width={400} src={mobile} /> 
         </div>
       </section>
     </div>
