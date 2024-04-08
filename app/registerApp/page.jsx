@@ -13,7 +13,7 @@ import {
 } from 'flowbite-react';
 import Link from 'next/link';
 import { url } from '../constant';
-
+import { cardStyle } from '../constant';
 import Nav from '../nav';
 import { toast } from 'react-toastify';
 
@@ -83,7 +83,7 @@ const Page = () => {
   };
   return (
     <>
-      <div className="bg-[#151718] h-full">
+      <div className="bg-black h-full">
         <Nav />
         <div className="text-center text-3xl mt-5 text-white">
           Start by creating an App endpoint
@@ -92,8 +92,8 @@ const Page = () => {
           </p>
         </div>
         <Card
-          style={{ backgroundColor: '#1a1d1e' }}
-          className=" w-[80%] sm:w-[50%] lg:w-[30%] mt-8 mx-auto p-2"
+         
+          className={` ${cardStyle} w-[80%] sm:w-[50%] lg:w-[30%] mt-8 mx-auto p-2`}
         >
             <h1 className='text-white text-xl' >Create New App</h1>
           <div className="flex max-w-md   flex-col gap-4">
@@ -108,7 +108,7 @@ const Page = () => {
                 }}
                 name="appName"
                 id="email"
-                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-300 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className=" bg-transparent border border-[#cdcdcd] text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-[#cdcdcd] block w-full p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="name@company"
                 required="true"
               />
@@ -122,7 +122,8 @@ const Page = () => {
                 />
               </div>
               <TextInput
-                className="text-black bg-gray-50 border  rounded-lg  "
+              style={{backgroundColor:"transparent"}}
+                className="text-black  bg-transparent border  rounded-lg  "
                 readOnly
                 type="text"
                 placeholder={orgDetails?.credentials?.orgId}
@@ -133,13 +134,14 @@ const Page = () => {
               <Label color="white" htmlFor="file-upload" value="Upload Json File" />
             </div>
             <FileInput
+              style={{backgroundColor:"transparent"}}
               onChange={(e) => {
                 console.log(e.target.files[0]);
                 setJsonFile(e.target.files[0]);
               }}
               sizing={'lg'}
               id="file-upload"
-              className='bg-gray-50 rounded-xl border border-gray-300 '
+              className='bg-transperent rounded-xl border border-gray-300 '
             />
             <Button className='bg-white text-black mt-3' onClick={handleCreateApp}>Create App</Button>
           </div>

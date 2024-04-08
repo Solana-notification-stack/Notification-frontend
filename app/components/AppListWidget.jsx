@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { Button } from 'flowbite-react'
 const AppListWidget = ({appName,appId,appSecret,userIds,orgId}) => {
 
     const router=useRouter()
@@ -10,12 +11,12 @@ const AppListWidget = ({appName,appId,appSecret,userIds,orgId}) => {
     }
   return (
     <>
-    <div className='flex w-full mt-2 justify-between items-center'>
-    <p className=' text-gray-500 font-bold' >{appName||"My APP"}</p>
-    <p className=' text-gray-500'>{appId}</p>
+    <div className='flex w-full mt-8 justify-between items-center'>
+    <p className=' text-[#cdcdcd] font-bold' >{appName||"My APP"}</p>
+    <p className=' text-[#cdcdcd]'>{appId}</p>
 
     <button
-    class="bg-white hover:bg-gray-300 text-black btn-sm font-bold  px-4 py-[2px] rounded">
+    class="[background:linear-gradient(180deg,rgba(144.86,173.46,185.71,0.8)_0%,rgba(32.16,80.74,101.56,0.1)_100%)] text-white  hover:border hover:border-white  btn-sm   px-4 py-[8px] rounded-xl">
      <Link href={{pathname:'/playground',query:{appId:appId}}}>Details</Link>
     
 </button>

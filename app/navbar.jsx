@@ -21,7 +21,7 @@ export default function Navbar() {
   const navigation = [
     { name: 'Dashboard', href: '/home' },
     {name:'Register App',href:'/registerApp'},
-    {name:'Campaigns',href:'/campaigns'},
+   
     {name:'Docs',href:'https://ronaks-organization.gitbook.io/notifease-docs'}
     
 

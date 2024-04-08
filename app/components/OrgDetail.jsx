@@ -5,6 +5,7 @@ import { Button, Card } from "flowbite-react";
 import AppListWidget from '../components/AppListWidget'
 import { Title } from '@tremor/react'
 import Loader from './Loader'
+import { cardStyle } from '../constant';
 const OrgDetail = () => {
     const [isLoading,setIsLoading]=useState(false)
     const [registeredAppData,setRegisteredAppData]=useState([])
@@ -46,23 +47,29 @@ const OrgDetail = () => {
     <>
     { !isLoading && 
     <div>
-    <Card style={{backgroundColor:"#1a1d1e"}}   className="max-w-sm  mt-5">
+    <Card className={` ${cardStyle} [background:linear-gradient(180deg,rgba(5,5,5,0)_0%,rgb(5,5,5)_100%)] max-w-sm  mt-5`}>
       <h5 className="text-2xl capitalize font-bold tracking-tight text-black dark:text-white">
         {orgDetails?.credentials?.orgName}
       </h5>
-      <p className="font-normal mt-2 text-gray-700 dark:text-gray-400">
+      <p className="font-normal mt-2 text-[#cdcdcd] ">
         {orgDetails?.credentials?.email}
       </p>
-      <p className="font-normal mt-1 text-gray-700 dark:text-gray-400">
+      <p className="font-normal mt-1 text-[#cdcdcd]">
         {orgDetails?.credentials?.orgId}
       </p>
-      <p className="font-normal text-gray-700 dark:text-gray-400">
+      <p className="font-normal text-[#cdcdcd]">
        Registered Apps : {orgDetails?.credentials?.registeredAppIds.length}
       </p>
       
 
     </Card>
-    <Card style={{backgroundColor:"#1a1d1e"}} className='mt-10 min-h-[30vh] lg:w-[70%] '>
+    
+
+    <Card style={{}} className={`
+    ${cardStyle}
+     rounded-md
+     mt-10
+      min-h-[30vh] lg:w-[70%] `}>
         <div className='flex gap-4  w-full'>
       <h1 className=' text-white mb-1 font-bold text-2xl'> Registered Apps</h1>
        
@@ -82,6 +89,7 @@ const OrgDetail = () => {
         }
       </div>
     </Card>
+   
     </div>
     }
     {

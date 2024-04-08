@@ -13,10 +13,10 @@ import Nav from '../nav';
 import Image from 'next/image';
 import bellIcon from '../../assets/bellIcon.png'
 import { Tabs } from "flowbite-react";
-import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
+import {  HiUserCircle } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
-
+import { cardStyle } from '../constant';
 // const app = [
 //   { name: '/shop', value: 789 },
 //   { name: '/product-features', value: 676 },
@@ -25,18 +25,18 @@ import { IoIosNotifications } from "react-icons/io";
 //   { name: '/downloads', value: 191 }
 // ];
 
-const userData=[{
-  userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
+// const userData=[{
+//   userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
 
-},{
-  userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
+// },{
+//   userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
 
-},
-{
-  userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
+// },
+// {
+//   userIdentifier:"3JUtHjPUsPmBtspC483jM9r5zktR8aannky6wPjPwNe6"
 
-},
-]
+// },
+// ]
 
 export default function PlaygroundPage(props) {
   const token=useAppSelector(state=>state.auth.token)
@@ -92,12 +92,12 @@ export default function PlaygroundPage(props) {
       }
     ];
   return (
-    <div div className='bg-[#151718] h-full'>
+    <div div className='  '>
     <div className=' w-full'>
     <Nav/>
     </div>
     <Tabs className='justify-evenly gap-5' aria-label="Tabs with icons" style="underline">
-    <Tabs.Item active title="Appboard" icon={HiUserCircle}>
+    <Tabs.Item color='#cdcdcd' active title="Appboard" icon={HiUserCircle}>
     <main className="px-4  mx-auto max-w-7xl">
     
       <Grid numItemsSm={2} numItemsLg={3} className="
@@ -105,7 +105,7 @@ export default function PlaygroundPage(props) {
       gap-6">
         {data.map((item) => (
           <Card key={item.category}
-            className="text-white bg-[#1a1d1e]"
+            className={`text-white ${cardStyle} `}
           >
             <Title className="text-white" >{item.category}</Title>
             <Flex
@@ -113,8 +113,8 @@ export default function PlaygroundPage(props) {
               alignItems="baseline"
               className="space-x-2 text-white"
             >
-              <Metric className="text-gray-500">{item.stat}</Metric>
-              <Text className="text-gray-500">Total Users</Text>
+              <Metric className="text-[#cdcdcd]">{item.stat}</Metric>
+              <Text className="text-[#cdcdcd]">Total Users</Text>
             </Flex>
             <Flex className="mt-6">
               <Text className="text-white" >Details</Text>
@@ -127,7 +127,7 @@ export default function PlaygroundPage(props) {
                   <>
                   <div key={data.name} className='flex text-white   justify-between'>
                     <p >{data.name}</p>
-                    <p className='text-gray-400'>{data.value}</p>
+                    <p className="text-[#cdcdcd]">{data.value}</p>
                   </div>
                   </>
                  )
@@ -140,7 +140,9 @@ export default function PlaygroundPage(props) {
       </Grid>
       
       <div>
-      <Card style={{backgroundColor:"#1a1d1e"}} className='mt-10 min-h-[30vh] lg:w-[70%] '>
+      <Card  
+       
+      className={` ${cardStyle} mt-10 min-h-[30vh] lg:w-[70%]`}>
         <div className='flex gap-4  w-full'>
       <h1 className=' text-white mb-1 font-bold text-2xl'> Users</h1>
        

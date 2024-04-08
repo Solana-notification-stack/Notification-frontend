@@ -32,6 +32,8 @@ export const featuresStyle={
   borderRadius:'40px'
 }
 
+export const cardStyle= "[background:linear-gradient(180deg,rgba(5,5,5,0)_0%,rgb(5,5,5)_100%)]"
+
 // export const gradientStyle1={
 //     color:"ffffff",
 //     background: 'hsla(354, 95%, 24%, 1)',

@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full ">
-      <body className="h-full bg-[#151718] ">
+      <body className="h-full bg-black ">
      <ReduxProvider> 
         <ToastContainer position='top-right'/>
         {children}

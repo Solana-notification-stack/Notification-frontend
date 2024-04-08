@@ -17,7 +17,8 @@ export default function LandingNav() {
   const navigation = [
     { name: 'Solution', href: '/home' },
     {name:'Resources',href:'/registerApp'},
-    {name:'Pricing',href:'/docs'}
+    {name:'Pricing',href:'/docs'},
+    {name:'Get Started',href:'/login'}
 
    
   ];
@@ -119,7 +120,7 @@ export default function LandingNav() {
                   className={classNames(
                     pathname === item.href
                       ? 'bg-slate-50 border-slate-500 text-slate-700'
-                      : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800',
+                      : 'border-transparent text-white hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800',
                     'block pl-3 pr-4 py-2 border-l-4 text-base font-medium'
                   )}
                   aria-current={pathname === item.href ? 'page' : undefined}

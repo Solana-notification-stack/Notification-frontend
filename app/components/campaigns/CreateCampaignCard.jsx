@@ -3,10 +3,11 @@ import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import Image from 'next/image';
 import announcementIcon from '../../../assets/announcementIcon.jpg'
 import CreateCampaignModal from '../../components/campaigns/CreateCampaignModal'
-const CreateCampaignCard = ({appSecret}) => {
+import { cardStyle } from '../../constant';
+const CreateCampaignCard = () => {
   return (
     <>
-      <Card className="text-white  bg-[#1a1d1e]">
+      <Card className={`text-white ${cardStyle} `}>
         <Title className="text-white text-center">Create Campaign</Title>
         <Image className=' rounded-full mx-auto mt-6' src={announcementIcon} height={150}/>
         <Flex className="mt-6">
