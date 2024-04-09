@@ -58,9 +58,12 @@ const page = () => {
           </div>
         </div>
       </div>
+      <div className='border-b'>
+
       <StatsCard/>
+      </div>
       <div id="solution" className="">
-        <div  className="mt-[2rem] pt-[5rem]  flex justify-center ">
+        <div  className="  flex justify-center ">
           <FeaturesCard/>
         </div>
         

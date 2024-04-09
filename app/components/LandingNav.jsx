@@ -48,13 +48,13 @@ export default function LandingNav() {
           }}
           className="mx-auto w-full  px-4 sm:px-6 lg:px-8">
             <div className="flex  h-16">
-              <div className="flex  sm:justify-evenly sm:gap-[8rem] lg:gap-[40rem] w-full">
+              <div className="flex  sm:justify-evenly sm:gap-[8rem] lg:gap-[15rem] w-full">
                 
                 <div className="flex  flex-shrink-0 items-center">
                     
                  <Image src={NELogo} width={62} />
                   <div className='font-bold sm:mx-3  text-white'>
-                 NotifiEase
+                 NotifEase
                 </div>
                 <div className="hidden align-end sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                   {navigation.map((item) => (

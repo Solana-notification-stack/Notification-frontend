@@ -10,8 +10,8 @@ const FeaturesCard = () => {
     <div className="px-8  md:my-12">
       <section className="w-[90%] mx-auto flex justify-center lg:gap-10 ">
         <div className="inline-flex flex-2 mt-8 flex-col items-start gap-8">
-          <p className=" text-[color:var(--Primary,#FFF)] [font-family:Sora] text-4xl md:text-5xl font-semibold mb-5 md:w-[70%] leading-[140%]">
-            Elevating Your Notification Experience
+          <p className=" text-[color:var(--Primary,#FFF)] [font-family:Sora] text-4xl md:text-5xl font-semibold mb-5 md:w-[90%] leading-[140%]">
+            Elevating Your Notification Experience !
           </p>
           <div className="flex flex-col items-start gap-2.5 border-b-[color:var(--Border,rgba(47,70,106,0.10))] pb-8 border-b border-solid">
             <div className="flex gap-4">
